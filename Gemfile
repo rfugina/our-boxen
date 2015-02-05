@@ -1,6 +1,10 @@
 source "https://rubygems.org"
 
-gem "boxen",                  "~> 2.7.0"
+# Replace boxen with our fork, adding --no-auth
+#gem "boxen",                  "~> 2.7.0"
+gem "boxen",                  "~> 2.7.0",
+  :git => 'https://github.com/mcallaway/boxen.git', :branch => 'mcallawa_noauth'
+
 gem "hiera",                  "~> 1.3.3"
 gem "librarian-puppet",       "~> 1.0.9"
 gem "puppet",                 "3.7.1"
