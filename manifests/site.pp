@@ -90,5 +90,5 @@ node default {
   }
 
   # Include personal modules
-  class {"people::${::boxen_user}":}
+  #class {"people::${::boxen_user}":}
 }
