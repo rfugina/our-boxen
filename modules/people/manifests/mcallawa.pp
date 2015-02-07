@@ -24,5 +24,6 @@ class people::mcallawa {
   include mcallawa::applications
   include mcallawa::puppet
   include mcallawa::python
+  include mcallawa::ipa
 
 }

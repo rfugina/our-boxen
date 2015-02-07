@@ -37,9 +37,16 @@ class people::mcallawa::puppet {
      version      => '~> 0.4',
      ruby_version => $ruby_version,
   }
+  ruby_gem { "augeas for ${ruby_version}":
+     gem          => 'augeas',
+     ruby_version => $ruby_version,
+  }
+  ruby_gem { "ruby-augeas for ${ruby_version}":
+     gem          => 'ruby-augeas',
+     ruby_version => $ruby_version,
+  }
   package {'augeas':
     ensure   => present,
     provider => 'homebrew',
   }
-
 }

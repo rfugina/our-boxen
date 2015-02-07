@@ -22,13 +22,20 @@ class people::mcallawa::python {
     command => $342command,
     creates => "/opt/boxen/pyenv/versions/3.4.2/bin/python",
   }
+
+  # Set my default python version
+  python::local { "/Users/${::boxen_user}":
+    version => '2.7.8'
+  }
+
+  # -- python modules
   python::package { "python-novaclient for 2.7.8":
     package => 'python-novaclient',
     python  => '2.7.8',
   }
-  # Set my default python version
-  python::local { "/Users/${::boxen_user}":
-    version => '2.7.8'
+  python::package { "jiraclient for 2.7.8":
+    package => 'jiraclient',
+    python  => '2.7.8',
   }
   # --
 
