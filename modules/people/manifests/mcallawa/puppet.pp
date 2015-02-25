@@ -37,12 +37,20 @@ class people::mcallawa::puppet {
      version      => '~> 0.4',
      ruby_version => $ruby_version,
   }
-  ruby_gem { "augeas for ${ruby_version}":
-     gem          => 'augeas',
-     ruby_version => $ruby_version,
-  }
   ruby_gem { "ruby-augeas for ${ruby_version}":
      gem          => 'ruby-augeas',
+     ruby_version => $ruby_version,
+  }
+  ruby_gem { "beaker for ${ruby_version}":
+     gem          => 'beaker',
+     ruby_version => $ruby_version,
+  }
+  ruby_gem { "beaker-librarian for ${ruby_version}":
+     gem          => 'beaker-librarian',
+     ruby_version => $ruby_version,
+  }
+  ruby_gem { "beaker-rspec for ${ruby_version}":
+     gem          => 'beaker-rspec',
      ruby_version => $ruby_version,
   }
   package {'augeas':
