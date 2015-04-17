@@ -109,6 +109,11 @@ class people::mcallawa::applications {
     provider => 'homebrew',
   }
 
+  package {'patchutils':
+    ensure   => present,
+    provider => 'homebrew',
+  }
+
   # -- I use ipfw to flush packet filter rules associated with Cisco VPN client
   # ipfw is gone in Yosemite, use pf via pfctl
   # http://krypted.com/mac-security/a-cheat-sheet-for-using-pf-in-os-x-lion-and-up/

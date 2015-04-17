@@ -7,6 +7,12 @@ class people::mcallawa::development {
   include autoconf
   include automake
 
+  # -- Attempt to enable fortran as a prerequisite to buildin R
+  # for use with Renv. This doesn't quite work yet.
+  Package <| title == 'boxen/brews/gcc48' |> {
+    install_options => [ '--verbose', '--enable-fortran', '--build-from-source'],
+  }
+
   # -- Add java, happens to be a prereq for pyenv too for jython.
   include java
 
